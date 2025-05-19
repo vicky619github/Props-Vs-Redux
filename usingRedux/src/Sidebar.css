@@ -1,0 +1,146 @@
+/* Sidebar styling */
+.sidebar {
+  width: 270px;
+  /* overflow-y: scroll; */
+  background-color: #000000; /* Merged from index.css */
+  color: white;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* BZ changes */
+  height: 100vh;
+  position: fixed; /* Merged from index.css */
+  top: 0; /* Merged from index.css */
+  left: 0; /* Merged from index.css */
+  z-index: 1000; /* Merged from index.css */
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.umc-logo {
+  width: 180px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.sidebar-nav {
+  /* padding: 0 15px;
+  flex: 1; */
+  display: flex;             /* BZ changes */
+  flex-direction: column;    /* BZ changes */
+  justify-content: space-between;  /* BZ changes */
+  flex: 1;
+  padding: 0 15px;
+
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  background-color: #6a6a6a;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: normal;
+  transition: background-color 0.3s ease;
+  border: 2px solid white;
+}
+
+.sidebar-nav li:hover {
+  background-color: #7c7c7c;
+  border-color: #fff;
+}
+
+/* Bottom section of the sidebar */
+.sidebar-bottom {
+  margin-bottom: 3rem; /
+}
+
+.sidebar-bottom ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-bottom li {
+  background-color: #6a6a6a;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: normal;
+  transition: background-color 0.3s ease;
+  border: 2px solid white;
+}
+
+.sidebar-bottom li:hover {
+  background-color: #7c7c7c;
+  border-color: #fff;
+}
+
+/* scroll settings */
+@media screen and (max-height: 750px) { /* BZ changes */
+  .sidebar-nav {
+    max-height: calc(100vh - 140px); /* total view height - 140px to removove logo*/
+    overflow-y: auto;
+  }
+
+  /* Scrollbar Styling for .sidebar-nav */
+  .sidebar-nav::-webkit-scrollbar { 
+    width: 8px;
+  }
+
+  .sidebar-nav::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .sidebar-nav::-webkit-scrollbar-thumb {
+    background: #b05757;
+    /* width: 5px; */
+  }
+
+  .sidebar-nav::-webkit-scrollbar-thumb:hover {
+    background: #dddddd;
+  }
+}
+
+
+
+
+
+
+
+/* 
+@media screen and (max-height: 750px)
+This is a media query targeting screens where the viewport height is 750px or less. That means:
+If someone is on a small laptop or is using split-screen mode, this will apply.
+It ensures a better UI experience when the vertical space is limited.
+
+Inside the media query:
+max-height: calc(100vh - 140px);
+Limits the height of .sidebar-nav (your nav section) so that it doesn’t overflow the screen.
+100vh = full viewport height.
+140px = estimated space taken by the logo and padding/margin at the top (non-scrollable content).
+This effectively gives the remaining height to the nav section.
+
+overflow-y: auto;
+Adds vertical scrolling to .sidebar-nav only if needed.
+This ensures that if your list grows too long (e.g. small screen, more items), users can still scroll to see everything. */
+
+
+
+
+
